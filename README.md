@@ -21,6 +21,16 @@ $ npm run build
 $ npm run start
 ```
 
+## Create Transaction
+
+```bash
+curl --location --request POST 'localhost:3000/algod/transaction' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "amount": 1000000
+}'
+```
+
 ## Test
 
 ```bash
