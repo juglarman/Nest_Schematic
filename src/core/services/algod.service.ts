@@ -79,7 +79,7 @@ export class AlgodService implements OnModuleInit {
     while (tries < 5) {
       const pendingInfo = (await this.algodClient.getPendingTransaction(txId)).data;
       if (pendingInfo['confirmed-round'] && pendingInfo['confirmed-round'] > 0) {
-        console.log('Transaction ' + txId + ' confirmed in round ' + pendingInfo['confirmed-round']);
+        this.logger.log('Transaction ' + txId + ' confirmed in round ' + pendingInfo['confirmed-round']);
         break;
       }
       lastRound++;
